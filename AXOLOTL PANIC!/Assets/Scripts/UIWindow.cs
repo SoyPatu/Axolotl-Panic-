@@ -1,19 +1,63 @@
+using DG.Tweening;
+using NaughtyAttributes;
 using UnityEngine;
 
 public class UIWindow : MonoBehaviour
 {
+    [Header("UI Settings")]
+    [SerializeField] private RectTransform _canvasRectTransform;
+    [SerializeField] private CanvasGroup _canvasGroup;
+    [SerializeField] private bool _hideOnStart = true;
+
+    [Header("Animation Settings")]
+    [SerializeField] private float _showDuration = 0.5f;
+    [SerializeField] private float _hideDuration = 0.5f;
+    [SerializeField] private Ease _showEase = Ease.OutBack;
+    [SerializeField] private Ease _hideEase = Ease.InBack;
+
+    public CanvasGroup CanvasGroup => _canvasGroup;
+
+    public RectTransform CanvasRectTransform => _canvasRectTransform;
+
     void Start()
     {
-        
+        Initialize();
     }
 
-    public virtual void Show()
+    public virtual void Initialize()
     {
+        if (_hideOnStart)
+        {
+            Hide();
+        }
+    }
 
+    [Button("Show Window")]
+    public virtual void Show(bool instant = false)
+    {
+        if(instant)
+        { 
+            _canvasRectTransform.gameObject.SetActive(true);
+        }
+        else
+        {
+            _canvasRectTransform.gameObject.SetActive(true);
+            RectTransform rectTransform = _canvasGroup.GetComponent<RectTransform>();
+            rectTransform.DOScale(Vector3.one, _showDuration).SetEase(_showEase);
+        }
     }
    
-    public virtual void Hide()
+    [Button("Hide Window")]
+    public virtual void Hide(bool instant = false)
     {
-
+        if (instant)
+        {
+            _canvasRectTransform.gameObject.SetActive(false);
+        }
+        else
+        {
+            RectTransform rectTransform = _canvasGroup.GetComponent<RectTransform>();
+            rectTransform.DOScale(Vector3.zero, _hideDuration).SetEase(_hideEase).OnComplete(() => _canvasRectTransform.gameObject.SetActive(false));
+        }
     }
 }
