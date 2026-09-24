@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class UIWindow : MonoBehaviour
 {
+
+    [Header("ID")]
+    [SerializeField] private string Id;
+
     [Header("UI Settings")]
     [SerializeField] private RectTransform _canvasRectTransform;
     [SerializeField] private CanvasGroup _canvasGroup;
@@ -18,6 +22,8 @@ public class UIWindow : MonoBehaviour
     public CanvasGroup CanvasGroup => _canvasGroup;
 
     public RectTransform CanvasRectTransform => _canvasRectTransform;
+
+    public string WindowId => Id;
 
     void Start()
     {
