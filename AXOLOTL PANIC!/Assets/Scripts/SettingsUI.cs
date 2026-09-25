@@ -4,6 +4,7 @@ using UnityEngine.UI;
 
 public class SettingsUI : UIWindow
 {
+    /*
     [Header("Settings UI")]
     [SerializeField] private Slider _volumeSlider;
 
@@ -17,4 +18,5 @@ public class SettingsUI : UIWindow
     {
         Debug.Log($"Volume changed to: {value}");
     }
+    */
 }
