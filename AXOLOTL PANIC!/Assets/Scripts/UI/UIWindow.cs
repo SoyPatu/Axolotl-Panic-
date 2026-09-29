@@ -18,6 +18,7 @@ public class UIWindow : MonoBehaviour
     [SerializeField] private float _hideDuration = 0.5f;
     [SerializeField] private Ease _showEase = Ease.OutBack;
     [SerializeField] private Ease _hideEase = Ease.InBack;
+    [SerializeField] private bool _isShowing = false;
 
     public CanvasGroup CanvasGroup => _canvasGroup;
 
@@ -34,7 +35,7 @@ public class UIWindow : MonoBehaviour
     {
         if (_hideOnStart)
         {
-            Hide();
+            Hide(instant: true);
         }
     }
 
@@ -47,9 +48,10 @@ public class UIWindow : MonoBehaviour
         }
         else
         {
+            _isShowing = true;
             _canvasRectTransform.gameObject.SetActive(true);
             RectTransform rectTransform = _canvasGroup.GetComponent<RectTransform>();
-            rectTransform.DOScale(Vector3.one, _showDuration).SetEase(_showEase);
+            rectTransform.DOScale(Vector3.one, _showDuration).SetEase(_showEase).OnComplete(() => _isShowing = false);
         }
     }
    
@@ -62,6 +64,11 @@ public class UIWindow : MonoBehaviour
         }
         else
         {
+            if (_isShowing)
+            {
+                Debug.LogWarning($"Window {Id} is already hiding."); 
+            }
+
             RectTransform rectTransform = _canvasGroup.GetComponent<RectTransform>();
             rectTransform.DOScale(Vector3.zero, _hideDuration).SetEase(_hideEase).OnComplete(() => _canvasRectTransform.gameObject.SetActive(false));
         }
