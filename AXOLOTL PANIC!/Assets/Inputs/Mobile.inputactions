@@ -1,0 +1,65 @@
+{
+    "version": 1,
+    "name": "Mobile",
+    "maps": [
+        {
+            "name": "Tap",
+            "id": "aa880b29-6502-4173-93f6-b2d45690749e",
+            "actions": [
+                {
+                    "name": "Touch",
+                    "type": "Button",
+                    "id": "7619c9ec-dafa-4fdc-95ad-60427c9000fc",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false,
+                    "priority": 0
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "abd1ec05-05b0-4c79-aa62-196863eb38f1",
+                    "path": "<Touchscreen>/Press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Touch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        },
+        {
+            "name": "Continues",
+            "id": "b75c3cdb-395f-4e34-8d08-e67dfe99046b",
+            "actions": [
+                {
+                    "name": "TouchBoss",
+                    "type": "Value",
+                    "id": "235b4da6-9492-4c10-9e96-b90dc481ff15",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true,
+                    "priority": 0
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "1dabb2ef-db82-4a9b-9e1d-4beb82fa0d9c",
+                    "path": "<Touchscreen>/primaryTouch/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TouchBoss",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
