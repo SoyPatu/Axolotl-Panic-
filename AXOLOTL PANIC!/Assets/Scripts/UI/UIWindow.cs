@@ -39,7 +39,7 @@ public class UIWindow : MonoBehaviour
         }
     }
 
-    [Button("Show Window")]
+    [Button("Test Window")]
     public virtual void Show(bool instant = false)
     {
         if(instant)
