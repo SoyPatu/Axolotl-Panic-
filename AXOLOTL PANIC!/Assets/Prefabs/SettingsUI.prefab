@@ -413,8 +413,8 @@ MonoBehaviour:
   m_Padding:
     m_Left: 65
     m_Right: 65
-    m_Top: 5
-    m_Bottom: 5
+    m_Top: 15
+    m_Bottom: 15
   m_ChildAlignment: 0
   m_Spacing: 0
   m_ChildForceExpandWidth: 1
@@ -565,7 +565,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sound FX
+  m_text: Sound sFX
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f738da62458a20b4483e5ea218603483, type: 2}
   m_sharedMaterial: {fileID: 6053653870518045143, guid: f738da62458a20b4483e5ea218603483, type: 2}
@@ -783,6 +783,8 @@ MonoBehaviour:
   _showEase: 27
   _hideEase: 26
   _isShowing: 0
+  _volumeSFXSlider: {fileID: 4811038243010781261}
+  _volumeMusicSlider: {fileID: 8921578200455731454}
 --- !u!1 &3950666386142545612
 GameObject:
   m_ObjectHideFlags: 0
@@ -841,7 +843,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9137255, g: 0, b: 0.39215687, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -916,7 +918,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9137255, g: 0, b: 0.39215687, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1445,7 +1447,7 @@ GameObject:
   - component: {fileID: 5610283448315668557}
   - component: {fileID: 4811038243010781261}
   m_Layer: 0
-  m_Name: Slider
+  m_Name: SoundFXSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1675,7 +1677,7 @@ GameObject:
   - component: {fileID: 2319757772121671550}
   - component: {fileID: 8921578200455731454}
   m_Layer: 0
-  m_Name: Slider (1)
+  m_Name: MusicSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
