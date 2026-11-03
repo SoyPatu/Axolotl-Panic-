@@ -26,7 +26,7 @@ MonoBehaviour:
     pitch: 1
     audioType: 1
   - name: MenuMusic
-    clip: {fileID: 0}
+    clip: {fileID: 8300000, guid: 59bc713eb9bfb5b47b3024a2091d4fa1, type: 3}
     loop: 1
     volume: 1
     pitch: 1

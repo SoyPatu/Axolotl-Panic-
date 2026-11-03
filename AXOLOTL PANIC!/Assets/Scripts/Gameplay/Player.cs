@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -21,5 +22,26 @@ public class Player : MonoBehaviour
         Vector2 spritePos = Camera.main.ScreenToWorldPoint(position);
         transform.position = new Vector3(spritePos.x, -4f, 0);
     }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Bullet"))
+        {
+            GameManager.Instance.PlayerDied();
+
+            Destroy(gameObject);
+
+        }
+    }
+    private void OnDestroy()
+    {
+        if (InputManager.Instance != null)
+        {
+            InputManager.Instance.OnTapEvent -= Tap;
+            InputManager.Instance.OnContinousEvent -= HandleContinuousInput;
+        }
+    }
+
 
 }

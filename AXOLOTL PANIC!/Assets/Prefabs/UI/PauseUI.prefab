@@ -242,6 +242,9 @@ MonoBehaviour:
   _showEase: 27
   _hideEase: 26
   _isShowing: 0
+  _pauseButton: {fileID: 0}
+  _resumeButton: {fileID: 0}
+  _quitButton: {fileID: 0}
 --- !u!1 &2824624660230621365
 GameObject:
   m_ObjectHideFlags: 0
@@ -362,7 +365,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 140444297248099880}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8933860690015361623}
+        m_TargetAssemblyTypeName: PauseUI, Assembly-CSharp
+        m_MethodName: Reanudar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3822475721550112933
 GameObject:
   m_ObjectHideFlags: 0
@@ -483,7 +498,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2275956720161938584}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8933860690015361623}
+        m_TargetAssemblyTypeName: PauseUI, Assembly-CSharp
+        m_MethodName: OnQuitButtonClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4681772118372496441
 GameObject:
   m_ObjectHideFlags: 0

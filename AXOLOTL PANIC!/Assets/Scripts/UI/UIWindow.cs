@@ -1,4 +1,5 @@
 using DG.Tweening;
+using DG.Tweening.Core.Easing;
 using NaughtyAttributes;
 using UnityEngine;
 
@@ -11,7 +12,7 @@ public class UIWindow : MonoBehaviour
     [Header("UI Settings")]
     [SerializeField] private RectTransform _canvasRectTransform;
     [SerializeField] private CanvasGroup _canvasGroup;
-    [SerializeField] private bool _hideOnStart = true;
+    [SerializeField] private bool _hideOnStart = false;
 
     [Header("Animation Settings")]
     [SerializeField] private float _showDuration = 0.5f;
@@ -52,7 +53,7 @@ public class UIWindow : MonoBehaviour
             _canvasGroup.transform.localScale = Vector3.zero;
             _canvasRectTransform.gameObject.SetActive(true);
             RectTransform rectTransform = _canvasGroup.GetComponent<RectTransform>();
-            rectTransform.DOScale(Vector3.one, _showDuration).SetEase(_showEase).OnComplete(() => _isShowing = false);
+            rectTransform.DOScale(Vector3.one, _showDuration) .SetEase(_showEase).SetUpdate(true) .OnComplete(() => _isShowing = false);
         }
     }
    

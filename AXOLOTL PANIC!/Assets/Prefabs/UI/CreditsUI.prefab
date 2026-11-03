@@ -394,6 +394,7 @@ MonoBehaviour:
   _showEase: 27
   _hideEase: 26
   _isShowing: 0
+  _returnButton: {fileID: 7319632626416228549}
 --- !u!1 &4238095591151587075
 GameObject:
   m_ObjectHideFlags: 0
@@ -988,7 +989,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4620929884104474606}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6826334633375061672}
+        m_TargetAssemblyTypeName: CreditsUI, Assembly-CSharp
+        m_MethodName: OnReturnButtonClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5953978129989914479
 GameObject:
   m_ObjectHideFlags: 0
@@ -1185,7 +1198,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 85
+  m_fontSize: 80.7
   m_fontSizeBase: 15
   m_fontWeight: 400
   m_enableAutoSizing: 1

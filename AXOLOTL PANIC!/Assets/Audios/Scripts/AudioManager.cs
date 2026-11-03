@@ -68,6 +68,8 @@ namespace Dino.Utility.Audio
         private void Start()
         {
             Initialize();
+            // Reproducir la música del menú.
+            PlaySound("MenuMusic");
         }
 
         private void Update()
@@ -109,15 +111,22 @@ namespace Dino.Utility.Audio
             switch (audioType)
             {
                 case AudioType.Music:
+                    audioSource.outputAudioMixerGroup =
+                        _audioManagerData.MusicAudioMixerGroup;
                     break;
+
                 case AudioType.SFX:
-                    audioSource.outputAudioMixerGroup = _audioManagerData.SfxAudioMixerGroup;
+                    audioSource.outputAudioMixerGroup =
+                        _audioManagerData.SfxAudioMixerGroup;
                     break;
+
                 case AudioType.Ambience:
+                    audioSource.outputAudioMixerGroup =
+                        _audioManagerData.AmbienceAudioMixerGroup;
                     break;
             }
         }
-        
+
         #endregion
 
 
@@ -140,11 +149,14 @@ namespace Dino.Utility.Audio
                 audioSource = go.AddComponent<AudioSource>();
                 audioSource.transform.SetParent(_soundsContainer.transform);
                 audioSource.clip = audioData.clip;
-                audioSource.loop = audioData.loop;
-                audioSource.volume = audioData.volume;
-                audioSource.pitch = audioData.pitch;
-                audioSource.Play();
-                SetAudioInMixerGroup(audioSource, audioData.audioType);
+audioSource.loop = audioData.loop;
+audioSource.volume = audioData.volume;
+audioSource.pitch = audioData.pitch;
+
+SetAudioInMixerGroup(audioSource, audioData.audioType);
+
+_audioSources.Add(audioSource);
+audioSource.Play();
                 _audioSources.Add(audioSource);
             }
             else

@@ -156,7 +156,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5147465901790872441}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5516928368971368362}
+        m_TargetAssemblyTypeName: SettingsUI, Assembly-CSharp
+        m_MethodName: OnReturnButtonClicked
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1061381857677140519
 GameObject:
   m_ObjectHideFlags: 0
@@ -785,6 +797,7 @@ MonoBehaviour:
   _isShowing: 0
   _volumeSFXSlider: {fileID: 4811038243010781261}
   _volumeMusicSlider: {fileID: 8921578200455731454}
+  _returnButton: {fileID: 585490547177775990}
 --- !u!1 &3950666386142545612
 GameObject:
   m_ObjectHideFlags: 0
@@ -1000,7 +1013,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 82149a8fa54542b4c9da70577778d42d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c222d262fed63da469e8dbc2c4fe6630, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
